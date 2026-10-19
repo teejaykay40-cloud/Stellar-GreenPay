@@ -16,6 +16,19 @@ We welcome contributors from all backgrounds! Connect with the core maintainers 
 4. Start the backend: `pnpm --filter backend dev`.
 5. Start the mobile app: `pnpm --filter mobile start`.
 
+## Backend coverage
+
+Run the backend suite with coverage from the `backend/` directory:
+
+```bash
+npm test -- --coverage
+```
+
+Jest writes the HTML report to `backend/coverage/lcov-report/index.html` and
+prints the summary in the terminal. The backend Jest configuration enforces a
+global floor of 30% statements and lines, 25% functions, and 20% branches;
+coverage below any floor fails locally and in Backend CI.
+
 ## ✅ Prerequisites
 
 Install the following before cloning:
@@ -144,6 +157,10 @@ Every UI string must exist in **all** locale files in `frontend/locales/` (`en.j
 ```bash
 node scripts/check-locale-keys.js
 ```
+
+### README translations
+
+The README is also available in [Spanish](docs/README.es.md) and [French](docs/README.fr.md). If your PR makes a substantive change to `README.md` (features, project structure, quick start or prerequisites), please mention it in the PR description so the translations can be flagged for update. Perfect sync is not required: the translations carry a "may lag behind the English README" notice, and the English `README.md` is always the source of truth. Translation-only PRs are welcome.
 
 ## Testing
 
